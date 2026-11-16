@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(159, 84%, 49%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom KuCoin colors */
+  --kucoin-primary: hsl(159, 84%, 49%);
+  --kucoin-secondary: hsl(207, 90%, 54%);
+  --kucoin-success: hsl(158, 100%, 41%);
+  --kucoin-danger: hsl(348, 83%, 64%);
+  --kucoin-warning: hsl(43, 96%, 56%);
+  --kucoin-dark-100: hsl(209, 14%, 55%);
+  --kucoin-dark-200: hsl(215, 16%, 72%);
+  --kucoin-dark-300: hsl(216, 12%, 17%);
+  --kucoin-dark-400: hsl(216, 19%, 9%);
+  --kucoin-dark-500: hsl(214, 32%, 4%);
+}
+
+.dark {
+  --background: hsl(214, 32%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(216, 12%, 17%);
+  --muted-foreground: hsl(209, 14%, 55%);
+  --popover: hsl(216, 19%, 9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(216, 19%, 9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(216, 12%, 17%);
+  --input: hsl(216, 12%, 17%);
+  --primary: hsl(159, 84%, 49%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(216, 12%, 17%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(216, 12%, 17%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(348, 83%, 64%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--kucoin-primary), var(--kucoin-secondary));
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, var(--kucoin-primary), var(--kucoin-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .dark-surface {
+    background-color: var(--kucoin-dark-400);
+    border-color: var(--kucoin-dark-300);
+  }
+  
+  .dark-surface-elevated {
+    background-color: var(--kucoin-dark-300);
+    border-color: var(--kucoin-dark-200);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px var(--kucoin-primary);
+    }
+    50% {
+      box-shadow: 0 0 20px var(--kucoin-primary), 0 0 30px var(--kucoin-primary);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
