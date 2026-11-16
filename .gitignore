@@ -1,0 +1,15 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+# Keep local credentials, database exports, and uploaded customer records out of public Git history
+.env
+.env.*
+!.env.example
+/COMPLETE_PROJECT_BACKUP.zip
+/KUCOINVIP_DATABASE_BACKUP.dump*
+/uploads/**
+!/uploads/**/
+!/uploads/**/.gitkeep
